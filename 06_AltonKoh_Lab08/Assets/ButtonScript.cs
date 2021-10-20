@@ -19,6 +19,6 @@ public class ButtonScript : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
     }
 }
