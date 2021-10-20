@@ -21,4 +21,8 @@ public class ButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
 }

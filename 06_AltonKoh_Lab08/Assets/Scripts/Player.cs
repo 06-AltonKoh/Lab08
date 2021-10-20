@@ -10,10 +10,12 @@ public class Player : MonoBehaviour
     public int PointCount;
     public Text PointTxt;
     public GameObject PlayerObj;
+    AudioSource As;
+    public AudioClip[] Effects;
     // Start is called before the first frame update
     void Start()
     {
-        
+        As = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,10 @@ public class Player : MonoBehaviour
 
             transform.position = transform.position + new Vector3(0, verticalInput * speed * Time.deltaTime, 0);
         }   
+        if(PointCount == 20)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -39,6 +45,7 @@ public class Player : MonoBehaviour
         {
             PointCount += 1;
             PointTxt.text = "Score: " + PointCount;
+            As.PlayOneShot(Effects[0]);
         }
     }
 
